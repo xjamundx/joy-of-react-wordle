@@ -107,6 +107,24 @@ h1 {
   font-size: 2rem;
 }
 
+.letter {
+  min-width: 2rem;
+  padding: 0.5em 0.25em;
+  text-align: center;
+  background-color: #ddd;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+}
+
+.letters-row {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin-bottom: 3px;
+}
+
 /*
   Round the corners for the 4 cells at the very corners of
   the game board
@@ -124,17 +142,22 @@ h1 {
   --radius: 0px 0px 0px 4px;
 }
 
-.cell.correct {
+.letters {
+  /* width: 550px;
+  margin-left: -80px; */
+}
+
+:where(.cell, .letter).correct {
   background: var(--color-success);
   border-color: var(--color-success);
   color: white;
 }
-.cell.incorrect {
+:where(.cell, .letter).incorrect {
   background: var(--color-gray-300);
   border-color: var(--color-gray-300);
   color: white;
 }
-.cell.misplaced {
+:where(.cell, .letter).misplaced {
   background: var(--color-warning);
   border-color: var(--color-warning);
   color: white;
